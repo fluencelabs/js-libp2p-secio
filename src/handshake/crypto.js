@@ -45,18 +45,36 @@ exports.createExchange = (state, callback) => {
       state.ephemeralKey.local
     ])
 
-    state.key.local.sign(selectionOut, (err, sig) => {
-      if (err) {
-        return callback(err)
-      }
-
+    // CODE BELOW WORKS
+    state.key.local.sign(selectionOut).then((sig) => { 
+      log('2. exchange (promise) – corpus signed') 
       state.exchange.out = {
         epubkey: state.ephemeralKey.local,
         signature: sig
       }
 
       callback(null, pbm.Exchange.encode(state.exchange.out))
+    }).catch((err) => {
+      if (err) {
+        return callback(err)
+      }
     })
+
+    // CODE BELOW HANGS
+    // state.key.local.sign(selectionOut, (err, sig) => {
+    //   log('2. exchange – corpus signed, err', err, 'sig', sig)
+      
+    //   if (err) {
+    //     return callback(err)
+    //   }
+
+    //   state.exchange.out = {
+    //     epubkey: state.ephemeralKey.local,
+    //     signature: sig
+    //   }
+
+    //   callback(null, pbm.Exchange.encode(state.exchange.out))
+    // })
   })
 }
 
