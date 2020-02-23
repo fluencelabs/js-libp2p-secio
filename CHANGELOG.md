@@ -1,3 +1,18 @@
+<a name="0.12.3"></a>
+## [0.12.3](https://github.com/ipfs/js-libp2p-secio/compare/v0.12.2...v0.12.3) (2020-02-13)
+
+
+### Bug Fixes
+
+* remove use of assert module ([#114](https://github.com/ipfs/js-libp2p-secio/issues/114)) ([027e0ad](https://github.com/ipfs/js-libp2p-secio/commit/027e0ad))
+
+
+
+<a name="0.12.2"></a>
+## [0.12.2](https://github.com/ipfs/js-libp2p-secio/compare/v0.12.1...v0.12.2) (2020-01-06)
+
+
+
 <a name="0.12.1"></a>
 ## [0.12.1](https://github.com/ipfs/js-libp2p-secio/compare/v0.12.0...v0.12.1) (2019-11-22)
 
